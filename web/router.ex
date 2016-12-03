@@ -16,7 +16,10 @@ defmodule Kobrakai.Router do
   scope "/", Kobrakai do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    get "/", ProjectController, :index
+    get "/kontakt", FooterController, :contact
+    get "/impressum", FooterController, :imprint
+    get "/:slug", ProjectController, :show
   end
 
   # Other scopes may use custom stacks.

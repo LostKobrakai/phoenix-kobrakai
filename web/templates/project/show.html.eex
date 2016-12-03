@@ -1,0 +1,39 @@
+<% [aside_head | aside_rest] = @project.aside %>
+<div class="barba-container" data-namespace="project">
+	<main>
+		<div class="main grid grid--rev">
+			<div class="grid__item">
+				<%= render_aside(aside_head) %>
+			</div>
+			<div class="grid__item bp2--one-half">
+				<div class="text">
+					<div class="headlines">
+						<h1><%= @project.title %></h1>
+						<%= if @project.subtitle do %>
+						<h2><%= @project.subtitle %></h2>
+						<% end %>
+					</div>
+					<%= raw(@project.text) %>
+				</div>
+			</div><div class="grid__item bp2--one-half">
+				<div class="grid">
+          <%= for aside_item <- aside_rest do %>
+					<div class="grid__item bp1--one-half bp2--one-whole">
+            <%= render_aside(aside_item) %>
+					</div>
+          <% end %>
+				</div>
+			</div>
+		</div>
+	</main>
+  <footer>
+		<a href="<%= project_path(@conn, :index) %>">
+			<img id="headerimg" src="<%= static_path(@conn, "/images/pfeil.png") %>" alt="" title="Zurück">
+		</a>
+    <p>
+      <a href='<%= footer_path(@conn, :contact) %>' title='Kontakt'>Kontakt</a>
+      &middot; 
+      <a href='<%= footer_path(@conn, :imprint) %>' title='Impressum'>Impressum</a> 
+    </p>
+  </footer>
+</div>

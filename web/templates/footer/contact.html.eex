@@ -1,0 +1,35 @@
+<div class="barba-container" data-namespace="project">
+	<main>
+		<div class="main grid">
+			<div class="grid__item push--bp2--one-half bp2--one-half contact">
+				<div class="headlines">
+					<h1 class="h2" style="text-transform: none; letter-spacing: 0">Ich freue mich auf Ihre Nachricht.</h1>
+				</div>
+				<table class="t-10-90">
+					<tbody>
+						<tr>
+							<th scope="row">Telefon:</th>
+							<td><span class="tel">(+49)</span><span class="tel">1522</span><span class="tel">16</span><span class="tel">16</span><span class="tel">149</span></td>
+						</tr>
+						<tr>
+							<th scope="row">Email:</th>
+							<td>benni@kobrakai.de</td>
+						</tr>
+						<tr>
+							<th scope="row">Skype:</th>
+							<td>lost.kobrakai</td>
+						</tr>
+					</tbody>
+				</table>	
+			</div>
+		</div>
+	</main>
+  <footer>
+		<a href="<%= project_path(@conn, :index) %>">
+			<img id="headerimg" src="<%= static_path(@conn, "/images/pfeil.png") %>" alt="" title="Zurück">
+		</a>
+    <p>
+      <a href='<%= footer_path(@conn, :imprint) %>' title='Impressum'>Impressum</a> 
+    </p>
+  </footer>
+</div>

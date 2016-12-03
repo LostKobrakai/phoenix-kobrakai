@@ -1,35 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hello Kobrakai!</title>
-    <%= if Mix.env !== :dev do %>
+    <title><%= raw(render_title(@conn)) %></title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
-    <% end %>
   </head>
 
   <body>
-    <div class="container">
-      <header class="header">
-        <nav role="navigation">
-          <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
-          </ul>
-        </nav>
-        <span class="logo"></span>
-      </header>
+    <header>
+      <a id="headerlink" href="<%= project_path(@conn, :index) %>">
+        <img 
+          id="headerimg" 
+          src="<%= static_path(@conn, "/images/signee.png") %>" 
+          alt="Runder, schwarzer Kreis mit den Buchstaben mB in gebrochener Schrift zu einem Logo kombiniert" 
+          title="Benjamin Milde">
+      </a>
+    </header>
 
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+    <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+    <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
-      <main role="main">
-        <%= render @view_module, @view_template, assigns %>
-      </main>
+    <div id="barba-wrapper">
+      <%= render @view_module, @view_template, assigns %>
+    </div>
 
     </div> <!-- /container -->
     <%= if Mix.env == :dev do %>
@@ -37,5 +36,6 @@
     <% else %>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
     <% end %>
+    <script type="text/javascript" src="//e.issuu.com/embed.js" async="true"></script>
   </body>
 </html>

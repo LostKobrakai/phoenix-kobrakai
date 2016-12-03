@@ -1,0 +1,48 @@
+<div class="barba-container" data-namespace="index">
+  <main>
+    <div class="main grid grid--rev">
+      <div class="grid__item bp2--one-half">
+        <div class="text">
+          <div class="headlines">
+            <h1>Benjamin Milde</h1>
+            <h2>Mediadesign</h2>
+          </div>
+          <p>
+            Hallo und willkommen auf meinem Portfolio. Ich bin Benjamin Milde, Designer im Bereich neue Medien mit Bachelor of Arts in Mediadesign. In den drei Jahren meines Studium an der Mediadesign Hochschule in München hab ich mich mit einer Bandbreite an verschiedenen Designdisziplinen beschäftigt: Von Printdesign über Corporate Design bis hin zu neuen Medien wie Film und 3D Modellierung. Neben meinem Interesse für Webdesign, das meinen Programmierkenntnissen in dem Bereich geschuldet ist, habe ich vor allem an dem konzeptionellen Aufbau von Designarbeiten und generativer Gestaltung gefallen gefunden.
+          </p>
+          <p>
+            Während meines Studium konnte ich bereits zwei Agenturen kennenlernen. Im zweiten Semester sammelte ich erste Erfahrungen bei Edelweiss72, wo ich vor allem Newsletter und Teaser gestaltete. Vor der Bachelorphase war ich dann für einige Monate im SONOIO Designstudio. Dort war meine Aufgabe die Konzeption und Gestaltung von&nbsp;Apps und Webseiten.
+          </p>
+          <p>
+            Neben der Arbeit in beiden Agenturen hatte ich auch einige freie Webdesign Aufträge, die jedoch zum Großteil aus Programmierarbeit bestehender Designs bestanden. Mit der Selbstständigkeit überbrücke ich auch aktuell die Zeit der Jobsuche nach dem Studium.
+            </p>
+          <p>
+            Während des Studium hat sich auch meine Freude an der Fotografie wiederentwickelt, weshalb ich in meiner Freizeit meinem Hobby als Peoplefotograf nachgehe.
+          </p>
+          <p>
+            Tabellarischer Lebenslauf als <a href="/site/assets/files/1/benjamin_milde_lebenslauf.pdf">PDF</a>.
+          </p>
+        </div>
+      </div><div class="grid__item bp2--one-half">
+        <h3 class="h5">Projekte</h3>
+        <ul id="projects">
+          <%= for project <- @projects do %>
+          <li>
+            <a href="/<%= project.slug %>">
+              <h4><%= project.title %></h4>
+            </a>
+            <div class="date"><%= Timex.format!(project.date, "%d.%m.%Y", :strftime) %></div>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>
+      <a href='<%= footer_path(@conn, :contact) %>' title='Kontakt'>Kontakt</a>
+      &middot; 
+      <a href='<%= footer_path(@conn, :imprint) %>' title='Impressum'>Impressum</a> 
+    </p>
+  </footer>
+</div>

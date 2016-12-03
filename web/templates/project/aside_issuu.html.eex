@@ -1,0 +1,3 @@
+<div class="video-container v-3-2">
+	<div data-configid="<%= @item.id %>" class="issuuembed video-iframe"></div>
+</div>

@@ -30,7 +30,7 @@ var webpackConfig = {
 
 
 
-if(process.env.NODE_ENV.indexOf('development') > -1 ) {
+if(process.env.NODE_ENV && process.env.NODE_ENV.indexOf('development') > -1 ) {
 	// __________________________________ DEVELOPMENT __________________________________ 
 
 	console.log("+++ USING DEFAULT CONFIG +++ " + process.env.NODE_ENV );
