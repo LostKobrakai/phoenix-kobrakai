@@ -41,6 +41,7 @@ export default {
 		initializeLogoListeners()
 
 		Barba.Pjax.start()
+		Barba.Prefetch.init()
 		Barba.Pjax.getTransition = () => {
 			return Barba.HistoryManager.prevStatus().namespace === 'index' 
 				? SlideInTransition 
