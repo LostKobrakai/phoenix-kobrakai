@@ -1,5 +1,11 @@
 # Kobrakai
 
+Elixir/Phoenix implementation of [kobrakai.de](https://kobrakai.de).
+
+---
+
+## Phoenix Readme
+
 To start your Phoenix app:
 
   * Install dependencies with `mix deps.get`
@@ -10,7 +16,7 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
 
-## Learn more
+### Learn more
 
   * Official website: http://www.phoenixframework.org/
   * Guides: http://phoenixframework.org/docs/overview
