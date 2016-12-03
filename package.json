@@ -2,8 +2,8 @@
   "repository": {},
   "license": "MIT",
   "scripts": {
-    "deploy": "webpack -p",
-    "watch": "webpack --watch-stdin --progress --color"
+    "deploy": "NODE_ENV=production webpack -p",
+    "watch": "NODE_ENV=development webpack-dev-server --hot --watch --colors --config webpack.config.js --watch-stdin --progress --color"
   },
   "dependencies": {
     "phoenix": "file:deps/phoenix",
@@ -21,6 +21,8 @@
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "vue-loader": "^10.0.2",
-    "webpack": "^1.13.3"
+    "vue-template-compiler": "^2.1.4",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
   }
 }
