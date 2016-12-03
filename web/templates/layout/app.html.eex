@@ -18,6 +18,8 @@
         <img 
           id="headerimg" 
           src="<%= static_path(@conn, "/images/signee.png") %>" 
+          data-signee="<%= static_path(@conn, "/images/signee.png") %>" 
+          data-arrow="<%= static_path(@conn, "/images/pfeil.png") %>" 
           alt="Runder, schwarzer Kreis mit den Buchstaben mB in gebrochener Schrift zu einem Logo kombiniert" 
           title="Benjamin Milde">
       </a>
