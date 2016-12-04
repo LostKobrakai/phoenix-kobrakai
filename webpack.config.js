@@ -1,5 +1,6 @@
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var CopyPlugin = require("copy-webpack-plugin");
+var WriteFilePlugin = require("write-file-webpack-plugin");
 var Webpack = require('webpack');
 
 // __________________________________ BASE-CONFIG __________________________________ 
@@ -20,7 +21,10 @@ var webpackConfig = {
 	},
 
 	plugins: [
-		new CopyPlugin([{ from: "./web/static/assets" }])
+		new CopyPlugin(
+			[{ from: "./web/static/assets", force: true }],
+			{ copyUnmodified: true }
+		)
 	],
 
 	vue: {
@@ -46,8 +50,16 @@ if(process.env.NODE_ENV && process.env.NODE_ENV.indexOf('development') > -1 ) {
 		hot: true,
 		port: 4001,
 		inline: true,
-		progress: true
+		progress: true,
+		outputPath: './priv/static'
 	};
+	webpackConfig.plugins.push(
+		new WriteFilePlugin({
+			test: /.*\.(?!css$|js$).*$/,
+			useHashIndex: true,
+			log: false
+		})
+	)
 
 } else {
 	// __________________________________ PRODUCTION __________________________________ 

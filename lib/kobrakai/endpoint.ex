@@ -9,7 +9,8 @@ defmodule Kobrakai.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/", from: :kobrakai, gzip: false,
-    only: ~w(css fonts images js favicon.ico robots.txt)
+    only_matching: ~w(android-chrome apple-touch mstile favicon),
+    only: ~w(css fonts images js favicons favicon.ico robots.txt safari-pinned-tab.svg manifest.json browserconfig.xml)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
